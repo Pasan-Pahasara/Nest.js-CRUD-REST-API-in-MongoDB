@@ -4,8 +4,12 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppService } from './app.service';
 import { CustomerModule } from './customer/customer.module';
 
+import { config } from 'dotenv';
+// dotenv configuration
+config();
+
 @Module({
-  imports: [MongooseModule.forRoot(process.env.MONGO_URI), CustomerModule],
+  imports: [MongooseModule.forRoot(process.env.MONGO_URI)],
   controllers: [AppController],
   providers: [AppService],
 })
