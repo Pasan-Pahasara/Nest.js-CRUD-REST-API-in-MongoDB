@@ -11,8 +11,8 @@ export class CustomerService {
     @InjectModel('Customer') private readonly customerModel: Model<Customer>,
   ) {}
 
-  async saveCustomer(createCustomerDto: CreateCustomerDto): Promise<Customer> {
-    const newCustomer = new this.customerModel(createCustomerDto);
+  async saveCustomer(customer: Customer): Promise<Customer> {
+    const newCustomer = new this.customerModel(customer);
     return await newCustomer.save();
   }
 
