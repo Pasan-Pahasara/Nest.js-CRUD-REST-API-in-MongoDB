@@ -26,4 +26,9 @@ export class CustomerController {
   async findAll(): Promise<Customer[]> {
     return this.customerService.retrieveAllCustomers();
   }
+
+  @Get(':id')
+  async findOne(@Param('id') id: string) {
+    return this.customerService.retrieveCustomer(id);
+  }
 }
