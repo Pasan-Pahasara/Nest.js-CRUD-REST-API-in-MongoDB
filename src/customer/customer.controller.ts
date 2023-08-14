@@ -21,4 +21,9 @@ export class CustomerController {
   ): Promise<Customer> {
     return this.customerService.saveCustomer(createCustomerDto);
   }
+
+  @Get()
+  async findAll(): Promise<Customer[]> {
+    return this.customerService.retrieveAllCustomers();
+  }
 }
