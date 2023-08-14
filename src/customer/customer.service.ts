@@ -15,4 +15,8 @@ export class CustomerService {
     const newCustomer = new this.customerModel(createCustomerDto);
     return await newCustomer.save();
   }
+
+  async retrieveAllCustomers(): Promise<Customer[]> {
+    return await this.customerModel.find();
+  }
 }
