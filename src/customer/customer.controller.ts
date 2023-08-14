@@ -39,4 +39,9 @@ export class CustomerController {
   ) {
     return this.customerService.updateCustomer(id, updateCustomerDto);
   }
+
+  @Delete(':id')
+  async remove(@Param('id') id: string) {
+    return this.customerService.deleteCustomer(id);
+  }
 }
