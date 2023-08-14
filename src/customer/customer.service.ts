@@ -19,4 +19,8 @@ export class CustomerService {
   async retrieveAllCustomers(): Promise<Customer[]> {
     return await this.customerModel.find();
   }
+
+  async retrieveCustomer(id: string): Promise<Customer> {
+    return await this.customerModel.findById(id);
+  }
 }
