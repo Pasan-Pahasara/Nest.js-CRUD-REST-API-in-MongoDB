@@ -31,4 +31,12 @@ export class CustomerController {
   async findOne(@Param('id') id: string) {
     return this.customerService.retrieveCustomer(id);
   }
+
+  @Patch(':id')
+  async update(
+    @Param('id') id: string,
+    @Body() updateCustomerDto: CreateCustomerDto,
+  ) {
+    return this.customerService.updateCustomer(id, updateCustomerDto);
+  }
 }
