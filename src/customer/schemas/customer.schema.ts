@@ -1,8 +1,32 @@
-import mongoose from 'mongoose';
+import { Document, Schema, model } from 'mongoose';
 
-export const CustomerSchema = new mongoose.Schema({
-  nic: { type: String, required: true },
-  name: { type: String, required: true },
-  address: { type: String, required: false },
-  salary: { type: Number, required: false },
-});
+interface ICustomer extends Document {
+  nic: string;
+  name: string;
+  address: string;
+  salary: number;
+}
+
+const CustomerSchema = new Schema(
+  {
+    nic: {
+      type: String,
+      required: true,
+    },
+    name: {
+      type: String,
+      required: true,
+    },
+    address: {
+      type: String,
+      required: true,
+    },
+    salary: {
+      type: Number,
+      required: true,
+    },
+  },
+  { timestamps: true },
+);
+
+export const Customer = model<ICustomer>('Customer', CustomerSchema);
