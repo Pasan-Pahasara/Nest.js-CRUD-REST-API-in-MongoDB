@@ -1,5 +1,6 @@
 export class CreateCustomerDto {
-    readonly name: string;
-    readonly description: string;
-    readonly qty: number;
+  readonly nic: string;
+  readonly name: string;
+  readonly address: string;
+  readonly salary: number;
 }
