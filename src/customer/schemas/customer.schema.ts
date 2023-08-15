@@ -7,7 +7,7 @@ interface ICustomer extends Document {
   salary: number;
 }
 
-const CustomerSchema = new Schema(
+export const CustomerSchema = new Schema(
   {
     nic: {
       type: String,
